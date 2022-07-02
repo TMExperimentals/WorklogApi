@@ -1,5 +1,6 @@
 package com.tmsolution.worklogapi
 
+import com.tmsolution.worklogapi.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
