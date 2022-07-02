@@ -11,7 +11,11 @@ subprojects {
 
         dependencyManagement {
             imports {
-                mavenBom("org.jetbrains.kotlin:kotlin-bom:1.7.0")
+                mavenBom("io.ktor:ktor-bom:2.0.3")
+            }
+
+            dependencies {
+                dependency("ch.qos.logback:logback-classic:1.2.3")
             }
         }
     }
