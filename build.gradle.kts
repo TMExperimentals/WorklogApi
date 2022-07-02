@@ -15,7 +15,7 @@ subprojects {
             }
 
             dependencies {
-                dependency("ch.qos.logback:logback-classic:1.2.3")
+                dependency("ch.qos.logback:logback-classic:1.2.11")
             }
         }
     }
