@@ -9,10 +9,12 @@ fun Application.configureRouting() {
 
     // Starting point for a Ktor app:
     routing {
-        authenticate("auth-jwt") {
-            get("/") {
-                call.respondText("Hello World!")
-            }
+//        authenticate("auth-jwt") {
+//
+//        }
+
+        get("/") {
+            call.respondText("Hello World!")
         }
 
     }
