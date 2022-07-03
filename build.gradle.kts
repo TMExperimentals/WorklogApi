@@ -1,6 +1,6 @@
 plugins {
     base
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
+    id("io.spring.dependency-management") version "1.0.12.RELEASE"
 }
 
 subprojects {
@@ -15,7 +15,7 @@ subprojects {
             }
 
             dependencies {
-                dependency("ch.qos.logback:logback-classic:1.2.3")
+                dependency("ch.qos.logback:logback-classic:1.2.11")
             }
         }
     }
