@@ -18,9 +18,10 @@ subprojects {
 
             dependencies {
                 dependency("ch.qos.logback:logback-classic:1.2.11")
-                dependencySet("io.insert-koin:3.2.0"){
+                dependencySet("io.insert-koin:3.2.0") {
                     entry("koin-ktor")
                     entry("koin-logger-slf4j")
+                }
             }
         }
     }
