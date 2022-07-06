@@ -6,6 +6,7 @@ import com.tmsolution.worklogapi.core.repositories.WorklogsRepositoryImpl
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.application.*
 import io.ktor.server.config.*
+import org.flywaydb.core.Flyway
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import org.koin.fileProperties

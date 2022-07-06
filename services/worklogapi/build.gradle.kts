@@ -13,9 +13,6 @@ dependencies {
     implementation("io.insert-koin:koin-ktor")
     implementation("io.insert-koin:koin-logger-slf4j")
 
-
-
-
     implementation("ch.qos.logback:logback-classic")
 
     implementation("org.jetbrains.exposed:exposed-core")
@@ -23,8 +20,9 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc")
 
     implementation("com.zaxxer:HikariCP")
-
     implementation("com.microsoft.sqlserver:mssql-jdbc")
+    implementation("org.flywaydb:flyway-core")
+    implementation("org.flywaydb:flyway-sqlserver")
 
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
