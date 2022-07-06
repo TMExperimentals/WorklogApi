@@ -5,11 +5,13 @@ import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.*
 import io.ktor.server.engine.*
 import org.jetbrains.exposed.sql.Database
+import org.koin.java.KoinJavaComponent.inject
+import org.koin.ktor.ext.inject
 
-class WorklogStoreFactory(
-    private val environment: ApplicationConfig
-) {
 
+class WorklogStoreFactory() {
+
+    private val environment: ApplicationConfig by inject(ApplicationConfig::class.java)
     fun init(){
         Database.connect(hikariInit())
     }

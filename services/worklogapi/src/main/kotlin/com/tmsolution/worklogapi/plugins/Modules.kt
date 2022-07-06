@@ -13,14 +13,13 @@ import org.koin.ktor.ext.inject
 import org.koin.ktor.plugin.Koin
 import org.koin.logger.slf4jLogger
 
-
-val worklogModule = module {
-    singleOf<WorklogStoreFactory> { WorklogStoreFactory(HoconApplicationConfig(ConfigFactory.load())) }
-    singleOf<WorklogsRepository> { WorklogsRepositoryImpl() }
-
-}
-
 fun Application.modules(){
+
+    val worklogModule = module {
+        singleOf<ApplicationConfig> { environment.config }
+        singleOf<WorklogStoreFactory> { WorklogStoreFactory() }
+        singleOf<WorklogsRepository> { WorklogsRepositoryImpl() }
+    }
 
     configureRouting()
     jwtAuthentication()
