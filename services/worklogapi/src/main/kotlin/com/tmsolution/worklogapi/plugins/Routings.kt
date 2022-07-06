@@ -10,7 +10,6 @@ import org.koin.ktor.ext.inject
 
 fun Application.configureRouting() {
 
-    val worklogsRepository: WorklogsRepository by inject()
     // Starting point for a Ktor app:
     routing {
 //        authenticate("auth-jwt") {
@@ -18,7 +17,7 @@ fun Application.configureRouting() {
 //        }
 
         get("/") {
-            val test = worklogsRepository.fetch();
+            call.respondText("Hello World!")
         }
 
     }
