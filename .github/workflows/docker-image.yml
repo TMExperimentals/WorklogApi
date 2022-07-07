@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file **/Dockerfile --tag worklogapi:$(date +%s)
+      run: docker build --pull --rm -f "services/worklogapi/Dockerfile" -t worklogapi:$(date +%s) "services/worklogapi"
