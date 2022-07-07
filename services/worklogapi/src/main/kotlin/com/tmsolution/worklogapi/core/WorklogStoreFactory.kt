@@ -1,6 +1,7 @@
 package com.tmsolution.worklogapi.core
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource
+import com.tmsolution.worklogapi.config.env.EnvProperrties
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.server.config.*
@@ -14,7 +15,7 @@ import javax.sql.DataSource
 
 class WorklogStoreFactory() {
 
-    private val environment: ApplicationConfig by inject(ApplicationConfig::class.java)
+    private val environment: EnvProperrties by inject(EnvProperrties::class.java)
     lateinit var hikariDataConfig: HikariDataSource
     fun init(){
         hikariInit()
@@ -23,21 +24,20 @@ class WorklogStoreFactory() {
     }
 
     private fun hikariInit(){
-        val dbConfig = this.environment.config("ktor.database")
+
 
         val dataSourceSQL: DataSource = SQLServerDataSource().apply {
-            url = dbConfig.property("connection.jdbc").getString()
-            user = dbConfig.property("connection.user").getString()
-            setPassword(dbConfig.property("connection.password").getString())
+            url = environment.dbConfig.URL
+            user = environment.dbConfig.USER
+            setPassword(environment.dbConfig.PASSWORD)
         }
 
         val hikariConfig = HikariConfig().apply {
             dataSource = dataSourceSQL
-            driverClassName = dbConfig.property("connection.driverClassName").getString()
+            driverClassName = environment.dbConfig.DRIVER_CLASS
             isAutoCommit = false
-            println(dbConfig.property("connection.maximumPoolSize").getString())
-            maximumPoolSize = dbConfig.property("connection.maximumPoolSize").getString().toInt()
-            transactionIsolation = dbConfig.property("connection.transactionIsolation").getString()
+            maximumPoolSize = environment.dbConfig.MAX_POOL
+            transactionIsolation = environment.dbConfig.TRANSACTION_ISOLATION
             validate()
         }
 
