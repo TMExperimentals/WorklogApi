@@ -1,7 +1,7 @@
 package com.tmsolution.worklogapi.plugins
 
+import com.tmsolution.worklogapi.features.worklogs.api.v1.worklogController
 import io.ktor.server.application.*
-import io.ktor.server.auth.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
@@ -13,6 +13,7 @@ fun Application.configureRouting() {
 //
 //        }
 
+        worklogController()
         get("/") {
             call.respondText("Hello World!")
         }

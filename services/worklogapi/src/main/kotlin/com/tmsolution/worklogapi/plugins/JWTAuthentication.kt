@@ -9,7 +9,7 @@ import io.ktor.server.auth.jwt.*
 fun Application.jwtAuthentication() {
 
     val secret = environment.config.property("jwt.secret").getString()
-    install(Authentication){
+    install(Authentication) {
         // Configure jwt authentication
         jwt("auth-jwt") {
             realm = "Access to hello"
