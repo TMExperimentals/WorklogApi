@@ -6,7 +6,6 @@ import com.tmsolution.worklogapi.core.repositories.WorklogsRepository
 import com.tmsolution.worklogapi.core.repositories.WorklogsRepositoryImpl
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
-import org.koin.dsl.single
 
 val singletons = module {
     // Backend Config

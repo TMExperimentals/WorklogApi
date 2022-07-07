@@ -4,12 +4,9 @@ import com.microsoft.sqlserver.jdbc.SQLServerDataSource
 import com.tmsolution.worklogapi.config.env.EnvProperrties
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
-import io.ktor.server.config.*
-import io.ktor.server.engine.*
 import org.flywaydb.core.Flyway
 import org.jetbrains.exposed.sql.Database
 import org.koin.java.KoinJavaComponent.inject
-import org.koin.ktor.ext.inject
 import javax.sql.DataSource
 
 
@@ -17,13 +14,13 @@ class WorklogStoreFactory() {
 
     private val environment: EnvProperrties by inject(EnvProperrties::class.java)
     lateinit var hikariDataConfig: HikariDataSource
-    fun init(){
+    fun init() {
         hikariInit()
         Database.connect(hikariDataConfig)
         migrate()
     }
 
-    private fun hikariInit(){
+    private fun hikariInit() {
 
 
         val dataSourceSQL: DataSource = SQLServerDataSource().apply {
@@ -43,7 +40,8 @@ class WorklogStoreFactory() {
 
         this.hikariDataConfig = HikariDataSource(hikariConfig)
     }
-    private fun migrate(){
+
+    private fun migrate() {
         Flyway.configure().baselineOnMigrate(true).dataSource(hikariDataConfig.dataSource).load().migrate()
     }
 }

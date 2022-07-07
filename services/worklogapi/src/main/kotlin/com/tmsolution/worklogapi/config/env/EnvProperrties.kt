@@ -7,7 +7,7 @@ class EnvProperrties {
     lateinit var dbConfig: DBConfig
 }
 
-fun Application.setupENV(){
+fun Application.setupENV() {
     val envProperties: EnvProperrties by inject<EnvProperrties>()
 
     val dbConfig = environment.config.config("ktor.database")
