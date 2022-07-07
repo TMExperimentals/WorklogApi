@@ -7,6 +7,8 @@ dependencies {
     implementation("io.ktor:ktor-server-netty")
     implementation("io.ktor:ktor-server-auth")
     implementation("io.ktor:ktor-server-auth-jwt")
+    implementation("io.ktor:ktor-server-locations")
+
 //    implementation("io.ktor:ktor-jackson")
     implementation("io.ktor:ktor-server-content-negotiation")
 

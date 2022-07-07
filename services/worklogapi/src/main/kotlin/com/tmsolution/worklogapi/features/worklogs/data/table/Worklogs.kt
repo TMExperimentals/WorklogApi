@@ -1,4 +1,4 @@
-package com.tmsolution.worklogapi.core.dao
+package com.tmsolution.worklogapi.features.worklogs.data.table
 
 import org.jetbrains.exposed.dao.id.UUIDTable
 import org.jetbrains.exposed.sql.Column

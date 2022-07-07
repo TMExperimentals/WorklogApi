@@ -1,4 +1,4 @@
-package com.tmsolution.worklogapi.core.repositories
+package com.tmsolution.worklogapi.features.worklogs.domain.repositories
 
 import com.tmsolution.worklogapi.core.models.WorkLog
 
