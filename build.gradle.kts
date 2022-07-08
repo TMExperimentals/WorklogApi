@@ -13,7 +13,7 @@ subprojects {
             imports {
                 mavenBom("io.ktor:ktor-bom:2.0.3")
                 mavenBom("org.jetbrains.exposed:exposed-bom:0.38.2")
-                mavenBom("org.jetbrains.kotlin:kotlin-bom:1.7.0")
+                mavenBom("org.jetbrains.kotlin:kotlin-bom:1.7.10")
 
             }
 
