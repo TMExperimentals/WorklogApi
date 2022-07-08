@@ -1,10 +1,8 @@
 package com.tmsolution.worklogapi
 
-import com.tmsolution.worklogapi.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*
-import io.ktor.server.config.*
 import io.ktor.server.testing.*
 import junit.framework.TestCase.assertEquals
 import org.junit.Test
