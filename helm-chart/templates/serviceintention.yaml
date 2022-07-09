@@ -1,0 +1,10 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: {{ include "helm-chart.fullname" . }}
+spec:
+  destination:
+    name: {{ include "helm-chart.fullname" . }}
+  sources:
+    - name: tmsolution-gateway
+      action: allow
