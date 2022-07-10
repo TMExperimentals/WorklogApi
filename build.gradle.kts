@@ -4,6 +4,9 @@ plugins {
 }
 
 subprojects {
+
+    group = "com.tmsolution"
+
     apply {
         plugin("io.spring.dependency-management")
     }

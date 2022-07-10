@@ -1,6 +1,26 @@
-plugins {
+plugins{
+    application
+    id("com.github.johnrengelman.shadow") version "7.1.2"
     kotlin("jvm") version "1.7.10"
 }
+
+application{
+    mainClass.set("com.tmsolution.worklogapi.ApplicationKt")
+}
+
+tasks{
+    jar{
+        manifest {
+            attributes(mapOf(
+                "Implementation-Title" to project.name,
+                "Implementation-Version" to project.version,
+                "Main-Class" to "com.tmsolution.worklogapi.ApplicationKt"
+            ))
+        }
+
+    }
+}
+
 
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
