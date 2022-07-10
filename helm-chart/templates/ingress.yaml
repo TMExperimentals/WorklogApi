@@ -37,9 +37,9 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: worklogapi
+                name: {{ $fullName }}
                 port:
-                  number: 5001
+                  number: 5006
             # backend:
             #   serviceName: {{ $fullName }}
             #   servicePort: {{ $svcPort }}
