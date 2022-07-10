@@ -1,7 +1,7 @@
-FROM gradle:7.4.2-jdk17-alpine AS build
+FROM gradle:7.4.2-jdk17 AS build
 COPY --chown=gradle:gradle . /home/gradle/src
 WORKDIR /home/gradle/src
-RUN gradle build --no-daemon
+RUN gradle shadowJar --no-daemon
 
 FROM eclipse-temurin:17.0.3_7-jre-alpine
 EXPOSE 8080:8080
